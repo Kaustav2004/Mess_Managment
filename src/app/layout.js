@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
           <Providers>
             {children}
           </Providers>
+          <Toaster/>
         </AppRouterCacheProvider>
         
       </body>

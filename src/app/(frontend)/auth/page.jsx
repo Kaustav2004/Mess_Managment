@@ -10,18 +10,17 @@ export default function Auth() {
   return (
     <div className="flex">
       {/* Left Side - Image (Hidden on small screens) */}
-      <div className="div1 hidden xl:block w-1/2 h-screen bg-amber-200">
+      <div className="hidden xl:block w-1/2 bg-amber-200 relative h-content">
         <Image
-          src="/butter-chicken.jpg"
-          width={500}
-          height={500}
+          src="/auth_page_image.jpeg"
           alt="food"
-          className="object-cover w-full h-full"
+          fill 
+          className="object-cover h-full"
         />
       </div>
 
       {/* Right Side - Auth Forms (Takes full width when the left div is hidden) */}
-      <div className="bg-gradient-to-l from-gray-900 via-gray-800 to-black  flex flex-col justify-center items-center w-full xl:w-1/2 h-screen">
+      <div className="bg-gradient-to-l from-gray-900 via-gray-800 to-black  flex flex-col mt-5 pb-5 items-center w-full xl:w-1/2 min-h-screen h-auto ">
         {reg ? <SigninCard /> : <SignupCard />}
 
         <span

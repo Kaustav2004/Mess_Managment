@@ -7,11 +7,14 @@ import Card from "@mui/material/Card"
 import CardContent from "@mui/material/CardContent"
 import Button from "@mui/material/Button"
 import * as React from "react"
+import toast from "react-hot-toast"
+import Loading from "../../../Components/Loading"
 
 export default function SigninCard() {
   const { data: session } = useSession()
   const router = useRouter()
   const [value, setValue] = useState("1")
+  const [loading,setLoading] = useState(false);
 
   const handleChange = (event, newValue) => {
     setValue(newValue)
@@ -19,17 +22,38 @@ export default function SigninCard() {
 
   useEffect(() => {
     if (session) {
-      router.push("/")
+      const email = session.user?.email;
+      if (
+        !email ||
+        !email.match(/^[a-z]+\d{4}@(cse|it|ece|ee|me|ce)\.jgec\.ac\.in$/)
+      ) {
+        toast.error("Use College Email Id");
+         signOut();
+
+      }
+      else{
+        toast.success("Authentication Done !!");
+        router.push("/")
+      }
     }
   }, [session])
 
   const authHandler = async () => {
-    await signIn("google")
+    setLoading(true);
+    await signIn("google");
+    if (
+      !email ||
+      !email.match(/^[a-z]+\d{4}@(cse|it|ece|ee|me|ce)\.jgec\.ac\.in$/)
+    ) {
+      await signOut();
+    }
+    setLoading(false);
   }
 
   return (
-    <div className="flex justify-center items-center bg-gray-100">
-      <Card className="w-full max-w-md p-6 shadow-lg rounded-2xl bg-white">
+    <div className="flex justify-center items-center bg-black">
+      {loading && <Loading />}
+      <Card className="w-full max-w-md p-6 shadow-lg bg-white" sx={{ borderRadius: "1rem" }}>
         <h1 className="text-2xl font-semibold text-center text-gray-800 mb-6">
           Welcome to Hostel Management
         </h1>
