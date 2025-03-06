@@ -36,8 +36,8 @@ export default function SignupCard() {
   const [type, setType] = React.useState("")
 
   return (
-    <div className="flex justify-center items-center bg-gray-100 ">
-      <Card className="w-full max-w-md p-6 shadow-lg rounded-2xl bg-white">
+    <div className=" bg-black">
+      <Card className="w-full max-w-md p-6 shadow-lg rounded-2xl bg-white" sx={{ borderRadius: "1rem" }}>
         <h1 className="text-2xl font-semibold text-center text-gray-800 mb-6">
           Welcome to Hostel Management
         </h1>
@@ -114,11 +114,11 @@ export default function SignupCard() {
         </CardContent>
 
         <div
-          onClick={authHandler}
-          className="mt-2 items-center flex flex-col gap-2 cursor-pointer"
+          
+          className="items-center flex flex-col gap-2 "
         >
-          <h1 className="">OR</h1>
-          <div className="flex items-center gap-2 justify-center p-2 border border-gray-300 rounded-md cursor-pointer w-60">
+          <h1>OR</h1>
+          <div className="flex items-center gap-2 justify-center p-2 border border-gray-300 rounded-md cursor-pointer w-60 " onClick={authHandler}>
             <Image src="/google_logo.png" alt="google" width={30} height={30} />
             <span>Sign up with Google</span>
           </div>

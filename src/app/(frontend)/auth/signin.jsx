@@ -28,8 +28,8 @@ export default function SigninCard() {
   }
 
   return (
-    <div className="flex justify-center items-center bg-gray-100">
-      <Card className="w-full max-w-md p-6 shadow-lg rounded-2xl bg-white">
+    <div className="flex justify-center items-center bg-black">
+      <Card className="w-full max-w-md p-6 shadow-lg bg-white" sx={{ borderRadius: "1rem" }}>
         <h1 className="text-2xl font-semibold text-center text-gray-800 mb-6">
           Welcome to Hostel Management
         </h1>
