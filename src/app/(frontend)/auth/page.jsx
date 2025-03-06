@@ -12,7 +12,7 @@ export default function Auth() {
       {/* Left Side - Image (Hidden on small screens) */}
       <div className="div1 hidden xl:block w-1/2 h-screen bg-amber-200">
         <Image
-          src="/auth_page_image.jpeg"
+          src="/butter-chicken.jpg"
           width={500}
           height={500}
           alt="food"

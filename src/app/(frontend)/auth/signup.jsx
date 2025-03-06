@@ -37,14 +37,14 @@ export default function SignupCard() {
 
   return (
     <div className="flex justify-center items-center bg-gray-100 ">
-      <Card className="w-full max-w-md p-6 shadow-lg rounded-2xl bg-white">
+      <Card className="w-full max-w-md p-6 shadow-lg rounded-2xl bg-white ">
         <h1 className="text-2xl font-semibold text-center text-gray-800 mb-6">
           Welcome to Hostel Management
         </h1>
         <CardContent>
           <div className="space-y-4">
-            <div className="flex gap-4">
-              <div className="flex flex-col w-1/2">
+            <div className="flex ">
+              <div className="flex flex-col w-1/2 pr-1">
                 <label className="text-sm font-medium text-gray-600">
                   First Name
                 </label>
@@ -53,7 +53,7 @@ export default function SignupCard() {
                   className="border rounded-lg p-2 focus:ring-2 focus:ring-sky-500"
                 />
               </div>
-              <div className="flex flex-col w-1/2">
+              <div className="flex flex-col w-1/2 pl-1">
                 <label className="text-sm font-medium text-gray-600">
                   Last Name
                 </label>
