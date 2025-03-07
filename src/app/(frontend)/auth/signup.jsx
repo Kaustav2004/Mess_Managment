@@ -33,22 +33,35 @@ export default function SignupCard() {
         !email ||
         !email.match(/^[a-z]+\d{4}@(cse|it|ece|ee|me|ce)\.jgec\.ac\.in$/)
       ) {
+<<<<<<< HEAD
         toast.error("Use College Email Id")
         signOut()
       } else {
         toast.success("Authentication Done !!")
+=======
+        toast.error("Use College Email Id");
+        signOut();
+      }
+      else{
+        toast.success("Authentication Done !!");
+>>>>>>> a8731165f4470c1264b5ec0a4485e3447f67a589
         router.push("/")
       }
     }
-  }, [session])
+  }, [session, router])
 
   const authHandler = async () => {
+<<<<<<< HEAD
     setLoading(true)
     await signIn("google")
     const email = session.user?.email
+=======
+    setLoading(true);
+    await signIn("google");
+    const email = session?.user?.email;
+>>>>>>> a8731165f4470c1264b5ec0a4485e3447f67a589
     if (
-      !email ||
-      !email.match(/^[a-z]+\d{4}@(cse|it|ece|ee|me|ce)\.jgec\.ac\.in$/)
+      email && !email.match(/^[a-z]+\d{4}@(cse|it|ece|ee|me|ce)\.jgec\.ac\.in$/)
     ) {
       await signOut()
     }
@@ -69,8 +82,8 @@ export default function SignupCard() {
         </h1>
         <CardContent>
           <div className="space-y-4">
-            <div className="flex gap-4">
-              <div className="flex flex-col w-1/2">
+            <div className="flex ">
+              <div className="flex flex-col w-1/2 pr-1">
                 <label className="text-sm font-medium text-gray-600">
                   First Name
                 </label>
@@ -79,7 +92,7 @@ export default function SignupCard() {
                   className="border rounded-lg p-2 focus:ring-2 focus:ring-sky-500"
                 />
               </div>
-              <div className="flex flex-col w-1/2">
+              <div className="flex flex-col w-1/2 pl-1">
                 <label className="text-sm font-medium text-gray-600">
                   Last Name
                 </label>
@@ -125,7 +138,7 @@ export default function SignupCard() {
                   id="demo-simple-select"
                   value={type}
                   label="Type of account"
-                  onChange={handleChange}
+                  onChange={(e) => setType(e.target.value)}
                 >
                   <MenuItem value={10}>Student</MenuItem>
                   <MenuItem value={20}>Mess Committee</MenuItem>
@@ -139,7 +152,13 @@ export default function SignupCard() {
           </div>
         </CardContent>
 
+<<<<<<< HEAD
         <div className="items-center flex flex-col gap-2 ">
+=======
+        <div
+          className="items-center flex flex-col gap-2 "
+        >
+>>>>>>> a8731165f4470c1264b5ec0a4485e3447f67a589
           <h1>OR</h1>
           <div
             className="flex items-center gap-2 justify-center p-2 border border-gray-300 rounded-md cursor-pointer w-60 "
