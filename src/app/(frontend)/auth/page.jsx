@@ -14,13 +14,13 @@ export default function Auth() {
         <Image
           src="/auth_page_image.jpeg"
           alt="food"
-          fill 
+          fill
           className="object-cover h-full"
         />
       </div>
 
       {/* Right Side - Auth Forms (Takes full width when the left div is hidden) */}
-      <div className="bg-gradient-to-l from-gray-900 via-gray-800 to-black  flex flex-col mt-5 pb-5 items-center w-full xl:w-1/2 min-h-screen h-auto ">
+      <div className="bg-gradient-to-l from-gray-900 via-gray-800 to-black  flex flex-col  pb-5 items-center justify-center w-full xl:w-1/2 min-h-screen h-auto ">
         {reg ? <SigninCard /> : <SignupCard />}
 
         <span
